@@ -1,0 +1,113 @@
+.nav{
+    height: 64px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.nav_menu_open, .nav_close_menu {
+    position: absolute;
+    left: 32px;
+    top: 0px;
+    bottom: 0px;
+    margin: auto;
+    cursor: pointer;
+    mask-position: center;
+    -webkit-mask-position: center;
+    mask-repeat: no-repeat;
+    -webkit-mask-repeat: no-repeat; 
+    background-color: #FCB72B;     
+}
+
+.nav_menu_open{
+    width: 19px;
+    height: 16px;
+    mask-image: url('./icons/hamburger.svg');
+    -webkit-mask-image: url('./icons/hamburger.svg');
+    mask-size: 19px 16px;
+    -webkit-mask-size: 19px 16px;
+}
+
+.nav_close_menu{
+    width: 18px;
+    height: 18px;
+    mask-image: url('./icons/close.svg');
+    -webkit-mask-image: url('./icons/close.svg');
+    mask-size: 18px 18px;
+    -webkit-mask-size: 18px 18px;
+}
+
+.nav_menu_open:hover, .nav_close_menu:hover{
+    background-color: #495567;
+}
+
+
+
+.nav_logo{
+    width: 75.502px;
+    height: 20px;
+    flex-shrink: 0;
+}
+
+.overlay{
+    display: none;
+    position: absolute;
+    top: 64px;
+    width: 100%;
+    height: 90.3vh;
+    background-color: transparent;
+    transition: background-color 0.5s linear;
+}
+
+.dialog{
+    clip-path: circle(0px at 30px 35px);
+    border: none;
+    width: 256px;
+    height: 100%;
+    background-color: #333A44;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 64px 0px 24px 32px;
+    transition: clip-path 0.5s linear;
+}
+
+.dialog_links{
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.dialog_links li a{
+    color: #E5ECF4;
+    font-family: var(--font-mono);
+    font-size: 1.125rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 25px; /* 138.889% */
+}
+
+.dialog_button{
+    cursor: pointer;
+    width: 192px;
+    height: 53px;
+    flex-shrink: 0;
+    border: none;
+    background-color: #FCB72B;
+    color: #FFF;
+    text-align: center;
+    font-family: var(--font-mono);
+    font-size: 0.9375rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 25px; /* 166.667% */
+    border: 3px solid transparent;
+}
+
+.dialog_button:hover{
+    background-color: white;
+    color: #FCB72B;
+    border: 3px solid #FCB72B;
+}

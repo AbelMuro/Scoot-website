@@ -1,0 +1,27 @@
+@font-face {
+    font-family: 'space mono';
+    src: url('./FontFiles/SpaceMono-Bold.ttf');
+}
+
+@font-face {
+    font-family: 'lexend deca';
+    src: url('./FontFiles/LexendDeca-VariableFont_wght.ttf');
+}
+
+
+:root{
+    --font-mono: 'space mono';
+    --font-deca: 'lexend deca';
+    --closest: 100;
+    --close: 75;
+    --far: 50;
+    --farther: 25;
+    --farthest: 0;
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    transition: all 0.2s linear;
+}
