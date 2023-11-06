@@ -11,6 +11,10 @@ function MobileNavigationBar() {
         setOpen(!open);
     }
 
+    const handleScroll = () => {
+        window.scrollTo(0, 0);
+    }
+
     useEffect(() => {
         if(open){
             overlayRef.current.style.display = 'block';
@@ -27,6 +31,16 @@ function MobileNavigationBar() {
                 if(!dialogRef.current) return;
                 overlayRef.current.style.display = '';
             }, 500)
+        }
+    }, [open])
+
+    useEffect(() => {
+        if(open)
+            window.addEventListener('scroll', handleScroll);
+        else
+            window.removeEventListener('scroll', handleScroll);
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
         }
     }, [open])
 
