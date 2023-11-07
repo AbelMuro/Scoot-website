@@ -1,42 +1,54 @@
 import React, {useEffect, useRef} from 'react';
 import styles from './styles.module.css';
 import images from './images';
+import useMediaQuery from '~/Hooks/useMediaQuery.js';
 
-
-//make this component reusable
-function AppDetails({arrow, arrowPosition, circlePosition, image}) {
+function AppDetails({title, desc, flexDirection, arrow, arrowPosition, mobileArrowPosition, image}) {
+    const [mobile] = useMediaQuery('(max-width: 600px)');
+    const containerRef = useRef();
     const arrowRef = useRef();
     const circleRef = useRef();
+    const imageGroupRef = useRef();
 
     useEffect(() => {
-        Object.keys(arrowPosition).forEach((prop) => {
-            arrowRef.current.style[prop] = arrowPosition[prop];
-        })
-        Object.keys(circlePosition).forEach((prop) => {
-            circleRef.current.style[prop] = circlePosition[prop];
-        })
+        containerRef.current.classList.add(styles[`details_${flexDirection}`]);
+        imageGroupRef.current.classList.add(styles[`details_imageGroup_${flexDirection}`]);
     }, [])
 
+
+    useEffect(() => {
+        if(mobile){
+            Object.keys(mobileArrowPosition).forEach((prop) => {
+                arrowRef.current.style[prop] = mobileArrowPosition[prop];
+            })
+        }
+        else {
+            Object.keys(arrowPosition).forEach((prop) => {
+                arrowRef.current.style[prop] = arrowPosition[prop];
+            })
+        }
+    }, [mobile])
+
     return(
-        <section className={styles.details}>
-            <img className={styles.arrow} src={images[arrow]} ref={arrowRef}/>
-            <img className={styles.circle} src={images['circle']} ref={circleRef}/>
+        <section className={styles.details} ref={containerRef}>
+
             <div className={styles.details_text}>
                 <h1>
-                    Easy to use riding telemetry
+                    {title}
                 </h1>
                 <p>
-                    The Scoot app is available with riding telemetry. 
-                    This means it can show you your average speed, 
-                    how long you've been using the scooter, 
-                    your traveling distance, and many more things 
-                    all in an easy to use app.
+                    {desc}
                 </p>
                 <button>
                     Learn More
                 </button>
             </div>
-            <img className={styles.details_image} src={images[image]}/>
+            <div className={styles.details_imageGroup} ref={imageGroupRef}>
+                <img className={styles.image} src={images[image]}/>            
+                <img className={styles.arrow} src={images[arrow]} ref={arrowRef}/>
+                <img className={styles.circle} src={images['circle']} ref={circleRef}/>
+            </div>
+            
         </section>
     )
 }

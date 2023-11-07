@@ -1,0 +1,104 @@
+.signup{
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('./icons/semi-circles.svg');
+    background-color: #495567;
+    background-position: calc(100% + 180px) bottom;
+    background-repeat: no-repeat;
+}
+
+.signup_content{
+    width: 1110px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.signup_title{
+    width: 415px;
+    color: #FFF;
+    font-family: var(--font-mono);
+    font-size: 3rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 48px;
+    letter-spacing: -2.143px;
+    white-space: balance;
+}
+
+.signup_buttons{
+    display: flex;
+    gap: 18px;
+}
+
+.signup_buttons button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 11.73px;    
+    height: 56px;    
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.signup_buttons button:nth-of-type(1){
+    width: 159px;
+}
+
+.signup_buttons button:nth-of-type(2){
+    width: 182px;
+}
+
+.appStoreIcon {
+    width: 100%;
+    object-fit: contain;
+}
+
+.googleStoreIcon{
+    width: 100%;
+    object-fit: contain;
+}
+
+
+@media(max-width: 1200px){
+    .signup_content{
+        width: 90%;
+    }
+}
+
+@media(max-width: 850px) {
+    .signup_content{
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .signup_title{
+        text-align: center;
+    }
+
+    .signup_buttons button:nth-of-type(1){
+        width: 113px;
+        height: 40px;
+    }
+
+    .signup_buttons button:nth-of-type(2){
+        width: 130px;
+        height: 40px;
+    }
+}
+
+@media(max-width: 600px){
+    .signup{
+        height: 320px;
+    }
+
+    .signup_title{
+        white-space: initial;
+        width: 100%;
+        line-height: 32px; /* 100% */
+        font-size: 2rem;
+    }
+}
