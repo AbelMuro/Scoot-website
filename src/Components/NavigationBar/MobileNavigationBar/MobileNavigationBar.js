@@ -1,8 +1,10 @@
 import React, {useState, useEffect, useRef} from 'react';
+import {useNavigate} from 'react-router-dom'
 import styles from './styles.module.css';
 import icons from '../icons';
 
 function MobileNavigationBar() {
+    const navigate = useNavigate();
     const [open, setOpen] = useState(false);
     const overlayRef = useRef();
     const dialogRef = useRef();
@@ -13,6 +15,12 @@ function MobileNavigationBar() {
 
     const handleScroll = () => {
         window.scrollTo(0, 0);
+    }
+
+    const handleNavigate = (e) => {
+        const route = e.target.getAttribute('data-route')
+        setOpen(false);
+        navigate(route);
     }
 
     useEffect(() => {
@@ -48,19 +56,19 @@ function MobileNavigationBar() {
         <>
             <nav className={styles.nav}>
                 {open ? <div className={styles.nav_close_menu} onClick={handleOpen}/> : <div className={styles.nav_menu_open} onClick={handleOpen}/>}
-                <img className={styles.nav_logo} src={icons['logo']}/>
+                <img className={styles.nav_logo} src={icons['logo']} onClick={handleNavigate} data-route='/'/>
             </nav>      
             <div className={styles.overlay} ref={overlayRef}>
                 <dialog className={styles.dialog} ref={dialogRef}>
                     <ul className={styles.dialog_links}>
                         <li>
-                            <a>About</a>
+                            <a onClick={handleNavigate} data-route='/about'>About</a>
                         </li>
                         <li>
-                            <a>Location</a>
+                            <a onClick={handleNavigate} data-route='/location'>Location</a>
                         </li>
                         <li>
-                            <a>Careers</a>
+                            <a onClick={handleNavigate} data-route='/careers'>Careers</a>
                         </li>
                     </ul>
                     <button className={styles.dialog_button}>

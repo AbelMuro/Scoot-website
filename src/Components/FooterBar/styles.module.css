@@ -1,0 +1,119 @@
+.footer{
+    height: 96px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #333A44;
+}
+
+.footer_content{
+    width: 1110px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer_links{
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    gap: 32px
+}
+
+.footer_logo{
+    width: 107.8px;
+    object-fit: contain;
+    margin-right: 26px;
+}
+
+.footer_links li {
+    color: #939CAA;
+    font-family: var(--font-mono);
+    font-size: 0.9375rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 25px; 
+    cursor: pointer;
+}
+
+.footer_links li:hover{
+    color: #FCB72B
+}
+
+.footer_social{
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+
+.footer_social_link{
+    width: 24px;     
+    cursor: pointer;    
+    background-color: #FCB72B;      
+    mask-position: center;
+    -webkit-mask-position: center;
+    mask-repeat: no-repeat;
+    -webkit-mask-repeat: no-repeat;
+}
+
+.footer_social_link:nth-of-type(1){
+    height: 24px;
+    mask-image: url('./icons/facebook.svg');
+    -webkit-mask-image: url('./icons/facebook.svg');
+    mask-size: 24px 24px;
+    -webkit-mask-size: 24px 24px;
+}
+
+.footer_social_link:nth-of-type(2){
+    height: 19.5px;
+    mask-image: url('./icons/twitter.svg');
+    -webkit-mask-image: url('./icons/twitter.svg');
+    mask-size: 24px 19.5px;
+    -webkit-mask-size: 24px 19.5px;
+}
+
+.footer_social_link:nth-of-type(3){
+    height: 24px;
+    mask-image: url('./icons/instagram.svg');
+    -webkit-mask-image: url('./icons/instagram.svg');
+    mask-size: 24px 24px;
+    -webkit-mask-size: 24px 24px;
+}
+
+.footer_social_link:hover{
+    background-color: #E5ECF4
+}
+
+@media(max-width: 1200px){
+    .footer_content{
+        width: 90%;
+    }
+}
+
+@media(max-width: 700px){
+    .footer_links{
+        gap: 22px;
+    }
+}
+
+@media(max-width: 600px){
+    .footer{
+        height: 438px;
+    }
+    .footer_content{
+        flex-direction: column;
+        gap: 85px;
+    }
+
+    .footer_links{
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .footer_logo{
+        width: 107px;
+        margin: 0px 0px 25.44px;
+    }
+}

@@ -2,24 +2,14 @@ import React from 'react';
 import Header from './Header';
 import Instructions from './Instructions';
 import AppDetails from './AppDetails'
+import RidingTelemetry from './RidingTelemetry';
 
 function Home() {
     return(
         <>
             <Header/>
             <Instructions/>
-            <AppDetails 
-                title='Easy to use riding telemetry'
-                desc={`The Scoot app is available with riding telemetry. 
-                    This means it can show you your average speed, 
-                    how long you've been using the scooter, your traveling distance, 
-                    and many more things all in an easy to use app.`}
-                flexDirection='row'
-                arrow='leftDownwardArrow' 
-                arrowPosition={{top: 'initial', bottom: '0px', left: 'initial', right: '-160px', width: '734px' }} 
-                mobileArrowPosition={{top: 'initial', bottom: '0px', left: '-12px', right: 'initial'}}
-                image='telemetry'
-                />
+            <RidingTelemetry/>
             <AppDetails 
                 title='Coming to a city near you'
                 desc={`Scoot is available in 4 major cities so far. 

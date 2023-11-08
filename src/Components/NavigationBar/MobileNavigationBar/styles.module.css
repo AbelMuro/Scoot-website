@@ -49,6 +49,7 @@
     width: 75.502px;
     height: 20px;
     flex-shrink: 0;
+    cursor: pointer;
 }
 
 .overlay{
@@ -89,6 +90,11 @@
     font-style: normal;
     font-weight: 700;
     line-height: 25px; /* 138.889% */
+    cursor: pointer;
+}
+
+.dialog_links li a:hover{
+    color: #FCB72B;
 }
 
 .dialog_button{

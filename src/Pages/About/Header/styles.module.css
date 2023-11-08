@@ -1,0 +1,53 @@
+.header{
+    height: 200px;
+    display: flex;
+    align-items: center;
+    padding-left: 165px;
+    background-image: url('./images/about-hero-desktop.jpg');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 120px;
+}
+
+.header_title{
+    color: #FFF;
+    font-family: var(--font-mono);
+    font-size: 3.5rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 56px; /* 100% */
+    letter-spacing: -2.5px;
+}
+
+.header_circles{
+    width: 234px;
+    object-fit: contain;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: -34px;
+    margin: auto;
+}
+
+@media(max-width: 850px){
+    .header{
+        padding-left: 97px;
+        background-image: url('./images/about-hero-tablet.jpg');
+        margin-bottom: 144px;
+    }
+}
+
+@media(max-width: 600px){
+    .header{
+        padding: 0px;
+        justify-content: center;
+        background-image: url('./images/about-hero-mobile.jpg');
+        margin-bottom: 72px;
+    }
+
+    .header_circles{
+        display: none;
+    }
+}
