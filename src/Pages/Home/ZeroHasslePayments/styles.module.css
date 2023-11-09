@@ -4,7 +4,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 120px;
+    margin-bottom: 200px;
 }
 
 .text{
@@ -32,12 +32,38 @@
     font-style: normal;
     font-weight: 400;
     line-height: 25px; /* 166.667% */
+    margin-bottom: 16px;
 }
+
+
+
+.text button{
+    width: 180px;
+    height: 53px;
+    flex-shrink: 0;
+    background-color: #FCB72B;
+    color: #FFF;
+    text-align: center;
+    font-family: var(--font-mono);
+    font-size: 0.9375rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 25px; /* 166.667% */
+    border: 3px solid transparent;
+    cursor: pointer;
+}
+
+.text button:hover{
+    border: 3px solid #FCB72B;
+    background-color: white;
+    color: #FCB72B;
+}
+
+
 
 .images{
     width: 445px;
     display: flex;
-    justify-content: end;
     gap: 64px;
     position: relative;
 }
@@ -59,18 +85,18 @@
 }
 
 .images_arrow{
-    width: 534px;
+    width: 734px;
     object-fit: contain;
     position: absolute;
-    top: 0px;
-    left: -355px;
-    z-index: var(--far);
+    left: 250px;
+    top: 83px;
+    z-index: var(--far)
 }
 
 @media(max-width: 1200px){
     .container{
         width: 90%;
-        gap: 60px
+        gap: 40px
     }
 
     .images{
@@ -79,34 +105,45 @@
 
 }
 
-@media(max-width: 850px){
+@media(max-width: 860px){
     .container{
-        flex-direction: column;
+        flex-direction: column-reverse;
         gap: 56px;
+        margin-bottom: 104px;
+    }
+
+    .text button{
+        align-self: center;
     }
 
     .text{
         gap: 40px;
     }
 
-    .text h1, .text p{
-        text-align: center;
-    }
 
     .images{
         gap: 64px;
     }
 
-    .images_arrow{
-        left: -340px;
+    .text h1, .text p{
+        text-align: center;
     }
+
+
+    .text p{
+        margin-bottom: 0px;
+    }
+    
 }
 
-
 @media(max-width: 600px){
+    .container{
+        margin-bottom: 120px;
+    }
 
     .images_arrow{
-        left: -210px;
+        top: 0px;
+        left: 120px;
     }
 
     .images, .images_photo{
@@ -122,7 +159,7 @@
     }
 
     .text{
-        width: 80%;
+        width: 100%;
         gap: 32px;
     }
 

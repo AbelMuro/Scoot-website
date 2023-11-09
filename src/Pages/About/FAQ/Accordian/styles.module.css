@@ -1,0 +1,40 @@
+.accordian{
+    padding: 32px 40px;
+    background-color: #F2F5F9;
+    display: grid;
+    row-gap: 0px;
+    grid-template-columns: 1fr 16px;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.accordian:hover{
+    background-color: #FFF4DF;
+}
+
+.accordian_title{
+    color: #495567;
+    font-family: var(--font-mono);
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 28px; /* 116.667% */
+    letter-spacing: -1.071px;
+}
+
+.accordian_content{
+    height: 0;
+    overflow: hidden;
+    color: #495567;
+    font-family: var(--font-deca);
+    font-size: 0.9375rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 25px; /* 166.667% */
+}
+
+.accordian_arrow{
+    align-self: center;
+    width: 16px;
+    object-fit: contain;
+}

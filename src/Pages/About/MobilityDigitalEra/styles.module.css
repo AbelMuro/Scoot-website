@@ -85,13 +85,11 @@
     .container{
         flex-direction: column-reverse;
         gap: 56px;
-        margin-bottom: 128px;
     }
 
     .text{
         gap: 40px;
     }
-
 
     .images{
         gap: 64px;
@@ -113,9 +111,6 @@
 }
 
 @media(max-width: 600px){
-    .container{
-        margin-bottom: 120px;
-    }
 
     .images_arrow{
         left: -3px;
