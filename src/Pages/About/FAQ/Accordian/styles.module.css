@@ -4,6 +4,7 @@
     display: grid;
     row-gap: 0px;
     grid-template-columns: 1fr 16px;
+    column-gap: 10px;
     cursor: pointer;
     overflow: hidden;
 }
@@ -23,7 +24,7 @@
 }
 
 .accordian_content{
-    height: 0;
+    max-height: 0;
     overflow: hidden;
     color: #495567;
     font-family: var(--font-deca);
@@ -37,4 +38,12 @@
     align-self: center;
     width: 16px;
     object-fit: contain;
+}
+
+
+@media(max-width: 600px){
+    .accordian_title{
+        font-size: 1.125rem;
+        
+    }
 }

@@ -17,12 +17,12 @@ function Accordian({title, content}){
             arrowRef.current.style.transform = 'rotate(180deg)';
             accordianRef.current.style.rowGap = '24px';
             let height = contentRef.current.scrollHeight + 'px';
-            contentRef.current.style.height = height;
+            contentRef.current.style.maxHeight = height;
  
         }
         else{
             arrowRef.current.style.transform = '';
-            contentRef.current.style.height = '';
+            contentRef.current.style.maxHeight = '';
             setTimeout(() => {
                 if(!accordianRef.current) return;
                 accordianRef.current.style.rowGap = '';
@@ -30,6 +30,18 @@ function Accordian({title, content}){
         }
 
     }, [open])
+
+    useEffect(() => {
+        const handleResize = () => {
+            setOpen(false);
+        }
+
+        window.addEventListener('resize', handleResize);
+
+        return () => {
+            window.removeEventListener('resize', handleResize)
+        }
+    },[])
 
     return(
         <div className={styles.accordian} onClick={handleOpen} ref={accordianRef}>

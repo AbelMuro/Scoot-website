@@ -1,0 +1,129 @@
+.map{
+    display: grid;
+    width: 1110px;
+    margin: auto;
+    grid-template-columns: 301px 445px 180px;
+    column-gap: 30px;
+    justify-content: space-between;
+    align-items: center;
+    row-gap: 122px;
+    margin-bottom: 120px;
+}
+
+.map_container{
+    grid-column: 1/4;
+    grid-row: 1/2;    
+    position: relative;
+}
+
+.map_cityBox{
+    width: 189px;
+    height: 72px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #FCB72B; 
+    color: #495567;
+    text-align: center;
+    font-family: var(--font-mono);
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 28px; /* 116.667% */
+    letter-spacing: -1.071px;
+    position: absolute;
+}
+
+.map_cityBox span {
+    position: absolute;
+    width: 0px;
+    height: 0px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    bottom: -30px;
+    border-top: 15px solid #FCB72B;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+}
+
+.map_cityBox:nth-of-type(1){
+    left: 147px;
+    top: 71.44px
+}
+
+.map_cityBox:nth-of-type(2){
+    left: 393px;
+    top: 18px;
+}
+
+.map_cityBox:nth-of-type(3){
+    right: 65px;
+    top: 78px;
+}
+
+.map_cityBox:nth-of-type(4){
+    right: 142px;
+    top: 251px;
+}
+
+.map_image{
+    content: url('./images/world-map-desktop.png');
+    width: 1110px;
+    object-fit: contain;
+}
+
+.map_title{
+    grid-column: 1/2;
+    grid-row: 2/3;
+    white-space: balance;
+    color: #495567;
+    font-family: var(--font-mono);
+    font-size: 3rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 48px;
+    letter-spacing: -2.143px;
+}
+
+.map_desc{
+    color: #939CAA;
+    font-family: var(--font-deca);
+    font-size: 0.9375rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 25px; /* 166.667% */
+}
+
+.map_button{
+    width: 180px;
+    height: 53px;
+    flex-shrink: 0;
+    border: none;
+    background-color: #FCB72B;
+    color: #FFF;
+    text-align: center;
+    font-family: var(--font-mono);
+    font-size: 0.9375rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 25px; /* 166.667% */
+}
+
+
+@media(max-width: 1150px){
+    .map{
+        width: 90%;
+        grid-template-columns: 301px 1fr 180px;
+        align-items: start;
+    }
+    .map_image{
+        width: 100%;
+    }
+}
+
+/* tablet */
+@media(max-width: 850px){
+
+}

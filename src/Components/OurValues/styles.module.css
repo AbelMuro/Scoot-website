@@ -153,6 +153,7 @@
 @media(max-width: 600px){
     .values{
         grid-template-columns: 331px;
+        margin-bottom: 145px;
     }
 
     .values_image{
