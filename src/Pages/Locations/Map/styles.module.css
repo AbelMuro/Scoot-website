@@ -10,65 +10,9 @@
     margin-bottom: 120px;
 }
 
-.map_container{
+.map_image{
     grid-column: 1/4;
     grid-row: 1/2;    
-    position: relative;
-}
-
-.map_cityBox{
-    width: 189px;
-    height: 72px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #FCB72B; 
-    color: #495567;
-    text-align: center;
-    font-family: var(--font-mono);
-    font-size: 1.5rem;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 28px; /* 116.667% */
-    letter-spacing: -1.071px;
-    position: absolute;
-}
-
-.map_cityBox span {
-    position: absolute;
-    width: 0px;
-    height: 0px;
-    left: 0;
-    right: 0;
-    margin: auto;
-    bottom: -30px;
-    border-top: 15px solid #FCB72B;
-    border-left: 15px solid transparent;
-    border-right: 15px solid transparent;
-    border-bottom: 15px solid transparent;
-}
-
-.map_cityBox:nth-of-type(1){
-    left: 147px;
-    top: 71.44px
-}
-
-.map_cityBox:nth-of-type(2){
-    left: 393px;
-    top: 18px;
-}
-
-.map_cityBox:nth-of-type(3){
-    right: 65px;
-    top: 78px;
-}
-
-.map_cityBox:nth-of-type(4){
-    right: 142px;
-    top: 251px;
-}
-
-.map_image{
     content: url('./images/world-map-desktop.png');
     width: 1110px;
     object-fit: contain;
@@ -77,7 +21,6 @@
 .map_title{
     grid-column: 1/2;
     grid-row: 2/3;
-    white-space: balance;
     color: #495567;
     font-family: var(--font-mono);
     font-size: 3rem;
@@ -109,6 +52,38 @@
     font-style: normal;
     font-weight: 700;
     line-height: 25px; /* 166.667% */
+    cursor: pointer;
+    border: 3px solid transparent;
+}
+
+.map_button:hover{
+    border: 3px solid #FCB72B;
+    background-color: white;
+    color: #FCB72B;
+}
+
+.map_cities{
+    grid-row: 2/3;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 40px;
+}
+
+.map_cities div {
+    height: 72px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(252, 183, 43, 0.15);
+    color: #495567;
+    text-align: center;
+    font-family: var(--font-mono);
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 28px; /* 116.667% */
+    letter-spacing: -1.071px;
 }
 
 
@@ -125,5 +100,47 @@
 
 /* tablet */
 @media(max-width: 850px){
+    .map{
+        grid-template-columns: 100%;
+        gap: 40px;
+    }
 
+    .map_image{
+        grid-column: 1/2;
+        content: url('./images/world-map-tablet.png');
+        margin-bottom: 24px;
+    }
+
+    .map_title{
+        width: 90%;
+        justify-self: center;
+        text-align: center;
+    }
+
+    .map_desc{
+        text-align: center;    
+    }
+
+    .map_button{
+        justify-self: center;
+    }
+}
+
+@media(max-width: 600px){
+    .map{
+        gap: 32px;
+        margin-bottom: 72px;
+    }
+
+    .map_image{
+        content: url('./images/world-map-mobile.png');
+        margin-bottom: 8px;
+    }
+
+    .map_title{
+        grid-row: 3/4;
+        font-size: 32px;
+        line-height: 32px; /* 100% */
+        letter-spacing: -1.429px;
+    }
 }

@@ -8,7 +8,7 @@ function JobPositions() {
             {
                 data.map((job) => {
                     return(
-                        <div className={styles.job}>
+                        <div className={styles.job} key={job.position}>
                             <h1 className={styles.job_position}>
                                 {job.position}
                             </h1>

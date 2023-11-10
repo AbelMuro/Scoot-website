@@ -1,12 +1,29 @@
 import React from 'react';
 import styles from './styles.module.css';
+import useMediaQuery from '~/Hooks/useMediaQuery.js';
 
 function Map() {
+    const [mobile] = useMediaQuery('(max-width: 600px)');
+
     return(
         <section className={styles.map}>
-            <div className={styles.map_container}>
-                <img className={styles.map_image}/>
-            </div>
+            <img className={styles.map_image}/>
+            {mobile && 
+                <div className={styles.map_cities}>
+                    <div>
+                        New York
+                    </div>
+                    <div>
+                        London
+                    </div>
+                    <div>
+                        Jakarta
+                    </div>
+                    <div>
+                        Yokohama
+                    </div>
+                </div>
+            }
             <h1 className={styles.map_title}>
                 Your City Not Listed?
             </h1>
