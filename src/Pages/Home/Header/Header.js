@@ -7,7 +7,7 @@ function Header() {
         <header className={styles.header}>
             <section className={styles.header_content}>
                 <h1 className={styles.header_title}>
-                    Scooter sharing made simple
+                    Scooter sharing made simple!
                 </h1>
                 <img className={styles.header_line} src={images['line']}/>
                 <p className={styles.header_desc}>
