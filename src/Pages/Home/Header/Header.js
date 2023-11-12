@@ -1,8 +1,9 @@
 import React from 'react';
 import styles from './styles.module.css';
-import images from './images'
+import images from './images';
 
 function Header() {
+
     return(
         <header className={styles.header}>
             <section className={styles.header_content}>
@@ -17,7 +18,7 @@ function Header() {
                     the nearest bike, unlock it with a tap, 
                     and you’re away!
                 </p>
-                <button className={styles.header_button}>
+                <button className={styles.header_button} onClick={handleClick}>
                     Get Scootin
                 </button>
                 <img className={styles.header_rightArrow} src={images['rightArrow']}/>                
