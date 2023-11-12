@@ -8,6 +8,7 @@ function FooterBar() {
 
     const handleNavigation = (e) => {
         const route = e.target.getAttribute('data-route');
+        window.scrollTo(0,0);
         navigate(route)
     }
 
