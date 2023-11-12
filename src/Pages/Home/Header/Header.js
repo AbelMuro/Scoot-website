@@ -18,7 +18,7 @@ function Header() {
                     the nearest bike, unlock it with a tap, 
                     and you’re away!
                 </p>
-                <button className={styles.header_button} onClick={handleClick}>
+                <button className={styles.header_button}>
                     Get Scootin
                 </button>
                 <img className={styles.header_rightArrow} src={images['rightArrow']}/>                
