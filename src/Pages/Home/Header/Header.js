@@ -1,31 +1,33 @@
 import React from 'react';
 import styles from './styles.module.css';
 import images from './images';
+import {motion} from 'framer-motion';
+import {variants} from './variants'
 
 function Header() {
 
     return(
-        <header className={styles.header}>
+        <motion.header className={styles.header} initial='hidden' whileInView={'show'} viewport={{once: true}}transition={{staggerChildren: 0.3}}>
             <section className={styles.header_content}>
-                <h1 className={styles.header_title}>
+                <motion.h1 className={styles.header_title} variants={variants}>
                     Scooter sharing made simple
-                </h1>
-                <img className={styles.header_line} src={images['line']}/>
-                <p className={styles.header_desc}>
+                </motion.h1>
+                <motion.img className={styles.header_line} src={images['line']} variants={variants}/>
+                <motion.p className={styles.header_desc} variants={variants}>
                     Scoot takes the hassle out of urban mobility. 
                     Our bikes are placed in convenient locations 
                     in each of our cities. Use our app to locate 
                     the nearest bike, unlock it with a tap, 
                     and you’re away!
-                </p>
-                <button className={styles.header_button}>
+                </motion.p>
+                <motion.button className={styles.header_button} variants={variants}>
                     Get Scootin
-                </button>
-                <img className={styles.header_rightArrow} src={images['rightArrow']}/>                
+                </motion.button>
+                <motion.img className={styles.header_rightArrow} src={images['rightArrow']} variants={variants}/>                
             </section>
 
-            <img className={styles.header_whiteCircles} src={images['whiteCircles']}/>
-        </header>
+            <motion.img className={styles.header_whiteCircles} src={images['whiteCircles']} variants={variants}/>
+        </motion.header>
     )
 }
 

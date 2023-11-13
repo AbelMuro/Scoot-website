@@ -1,25 +1,32 @@
 import React from 'react';
 import icons from './icons';
 import styles from './styles.module.css';
+import {motion} from 'framer-motion';
+import { textVariants, buttonVariants } from './variants';
 
 function SignUpMessage() {
     return(
-        <section className={styles.signup}>
+        <motion.section 
+            className={styles.signup} 
+            initial='hidden' 
+            whileInView={'show'} 
+            viewport={{once: true, amount: 0.8}} 
+            transition={{staggerChildren: 0.4}}> 
             <div className={styles.signup_content}>
-                <h1 className={styles.signup_title}>
+                <motion.h1 className={styles.signup_title} variants={textVariants}>
                     Sign up and Scoot off today
-                </h1>
+                </motion.h1>
                 <div className={styles.signup_buttons}>
-                    <button>
+                    <motion.button variants={buttonVariants}>
                         <img className={styles.appStoreIcon} src={icons['appStoreIcon']}/>
-                    </button>
-                    <button>
+                    </motion.button>
+                    <motion.button variants={buttonVariants}>
                         <img className={styles.appStoreIcon} src={icons['googleStoreIcon']}/>
-                    </button>
+                    </motion.button>
                 </div>
             </div>
 
-        </section>
+        </motion.section>
     )
 }
 

@@ -7,12 +7,19 @@
     position: relative;
 }
 
-.nav_menu_open, .nav_close_menu {
+.nav_button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     position: absolute;
     left: 32px;
     top: 0px;
     bottom: 0px;
+    height: 20px;
     margin: auto;
+}
+
+.nav_menu_open, .nav_close_menu {
     cursor: pointer;
     mask-position: center;
     -webkit-mask-position: center;
@@ -20,6 +27,8 @@
     -webkit-mask-repeat: no-repeat; 
     background-color: #FCB72B;     
 }
+
+
 
 .nav_menu_open{
     width: 19px;
