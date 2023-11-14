@@ -10,12 +10,15 @@ function Map() {
     const props = {
         initial: 'hidden',
         whileInView: 'show',
-        viewport: {once: true, amount: 0.6},
     }
 
     return(
         <section className={styles.map}>
-            <motion.img className={styles.map_image} {...props} variants={mapVariants}/>
+            <motion.img 
+                className={styles.map_image} 
+                {...props} 
+                variants={mapVariants} 
+                viewport={{once: true, amount: 0.6}}/>
             {mobile && 
                 <motion.div 
                     className={styles.map_cities} 
@@ -38,12 +41,14 @@ function Map() {
             <motion.h1 
                 className={styles.map_title} 
                 {...props} 
+                viewport={{once: true}}
                 variants={textButtonVariants}>
                     Your City Not Listed?
             </motion.h1>
             <motion.p
                 className={styles.map_desc} 
                 {...props} 
+                viewport={{once: true}}
                 variants={textButtonVariants}>
                     If you’d like to see Scoot in your hometown, 
                     be sure to let us know. We track requests and 
@@ -54,6 +59,7 @@ function Map() {
             <motion.button 
                 className={styles.map_button} 
                 {...props} 
+                viewport={{once: true}}
                 variants={textButtonVariants}>
                     Message Us
             </motion.button>

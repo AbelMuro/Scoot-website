@@ -26,10 +26,12 @@ export const citiesVariants = {
 
 export const textButtonVariants = {
     hidden: {
-        scale: 0.1,
+        scale: 0,
+        opacity: 0,
     },
     show: {
         scale: 1,
+        opacity: 1,
         transition: {
             type: 'spring',
             stiffness: 150,
