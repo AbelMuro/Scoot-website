@@ -1,8 +1,9 @@
 import React, {useState, useRef, useEffect} from 'react';
 import styles from './styles.module.css';
 import icons from './icons';
+import {motion} from 'framer-motion'
 
-function Accordian({title, content}){
+function Accordian({title, content, ...itemProps}){
     const [open, setOpen] = useState(false);
     const contentRef = useRef();
     const accordianRef = useRef();
@@ -44,7 +45,7 @@ function Accordian({title, content}){
     },[])
 
     return(
-        <div className={styles.accordian} onClick={handleOpen} ref={accordianRef}>
+        <motion.div className={styles.accordian} onClick={handleOpen} ref={accordianRef} {...itemProps}>
             <h1 className={styles.accordian_title}>
                 {title}
             </h1>
@@ -52,7 +53,7 @@ function Accordian({title, content}){
             <p className={styles.accordian_content} ref={contentRef}>
                 {content}
             </p>
-        </div>
+        </motion.div>
     )
 }
 

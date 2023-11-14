@@ -17,7 +17,7 @@ function NavigationBar() {
     }
 
     return mobile ? <MobileNavigationBar/> :
-        <motion.nav className={styles.nav} initial='hidden' whileInView='show' viewport={{once: true}} transition={{staggerChildren: 0.5}}>
+        <motion.nav className={styles.nav} initial='hidden' whileInView='show' viewport={{once: true}} transition={{staggerChildren: 0.3}}>
             <ul className={styles.nav_links}>
                 <motion.li variants={linkVariants}>
                    <img src={icons['logo']} onClick={handleNavigate} data-route='/'/>   

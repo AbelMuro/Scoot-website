@@ -10,7 +10,7 @@ function BetterUrbanLiving() {
     const imageProps = {
         initial:'hidden',
         whileInView:'show',
-        viewport: {once: true, amount: 0.8},
+        viewport: {once: true, amount: 0.6},
         transition: {staggerChildren: 0.5, staggerDirection: -1}
     }
 
@@ -24,7 +24,7 @@ function BetterUrbanLiving() {
     const photoProps = {
         initial: 'hidden',
         whileInView: 'show',
-        viewport: {once: true, amount: 0.8},
+        viewport: {once: true, amount: 0.6},
         transition: {staggerChildren: 0.7},
         variants: photoVariants
     }

@@ -6,7 +6,7 @@ import { imageVariants, textVariants, photoVariants } from './variants';
 
 function MobilityDigitalEra() {
 
-    const props = {
+    const textProps = {
         initial: 'hidden',
         whileInView: 'show',
         viewport: {once: true, amount: 0.8}
@@ -15,7 +15,7 @@ function MobilityDigitalEra() {
     const photoProps = {
         initial: 'hidden',
         whileInView: 'show',
-        viewport: {once: true, amount: 0.8},
+        viewport: {once: true, amount: 0.6},
         variants: photoVariants
     }
 
@@ -23,7 +23,7 @@ function MobilityDigitalEra() {
         <section className={styles.container}>
             <motion.div 
                 className={styles.text}
-                {...props}
+                {...textProps}
                 transition={{staggerChildren: 0.4}}>
                 <motion.h1 variants={textVariants}>
                     Mobility for the digital era
@@ -38,7 +38,7 @@ function MobilityDigitalEra() {
             </motion.div>
             <motion.div 
                 className={styles.images} 
-                {...props}
+                {...textProps}
                 transition={{staggerChildren: 0.6}}>
                     <motion.img className={styles.images_photo} src={images['digitalEra']} {...photoProps} />
                     <motion.img className={styles.images_greyCircle} src={images['circle']} variants={imageVariants}/>

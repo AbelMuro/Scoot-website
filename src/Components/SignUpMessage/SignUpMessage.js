@@ -10,7 +10,7 @@ function SignUpMessage() {
             className={styles.signup} 
             initial='hidden' 
             whileInView={'show'} 
-            viewport={{once: true, amount: 0.8}} 
+            viewport={{once: false, amount: 0.8}} 
             transition={{staggerChildren: 0.4}}> 
             <div className={styles.signup_content}>
                 <motion.h1 className={styles.signup_title} variants={textVariants}>

@@ -1,6 +1,8 @@
 import React from 'react';
 import styles from './styles.module.css';
 import data from './Data';
+import {motion} from 'framer-motion';
+import {boxVariants} from './variants';
 
 function JobPositions() {
     return(
@@ -8,17 +10,25 @@ function JobPositions() {
             {
                 data.map((job) => {
                     return(
-                        <div className={styles.job} key={job.position}>
-                            <h1 className={styles.job_position}>
+                        <motion.div 
+                            className={styles.job} 
+                            key={job.position}
+                            initial='hidden'
+                            whileInView='show'
+                            viewport={{once: true, amount: 0.8}}
+                            transition={{delay: 0.4}}
+                            variants={boxVariants}
+                            >
+                            <motion.h1 className={styles.job_position}>
                                 {job.position}
-                            </h1>
-                            <p className={styles.job_location}>
+                            </motion.h1>
+                            <motion.p className={styles.job_location}>
                                 {job.location}
-                            </p>
-                            <button className={styles.job_apply}>
+                            </motion.p>
+                            <motion.button className={styles.job_apply}>
                                 Apply
-                            </button>
-                        </div>
+                            </motion.button>
+                        </motion.div>
                     )
                 })
             }

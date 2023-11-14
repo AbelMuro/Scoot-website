@@ -1,16 +1,26 @@
 import React from 'react';
 import Accordian from './Accordian';
 import styles from './styles.module.css';
+import {motion} from 'framer-motion';
+import {itemVariants} from './variants';
 
 function FAQ() {
+
+    const itemProps = {
+        initial: 'hidden',
+        whileInView: 'show',
+        viewport: {once: true, amount: 0.8},
+        variants: itemVariants
+    }
+
     return(
         <section className={styles.faq}>
-            <h1 className={styles.faq_title}>
+            <motion.h1 className={styles.faq_title} {...itemProps}>
                 FAQs
-            </h1>
-            <h2 className={styles.faq_desc}>
+            </motion.h1>
+            <motion.h2 className={styles.faq_desc} {...itemProps}>
                 How it works
-            </h2>
+            </motion.h2>
             <div className={styles.faq_accordians}>
                 <Accordian 
                     title='How do I download the app?' 
@@ -21,7 +31,8 @@ function FAQ() {
                         would be to click the relevant 
                         link at the bottom of this page 
                         and you’ll be re-directed to 
-                        the correct page.`}/>
+                        the correct page.`}
+                    {...itemProps}/>
                 <Accordian 
                     title='Can I find a nearby Scoots?'
                     content={`Definitely! Simply open up 
@@ -29,7 +40,8 @@ function FAQ() {
                         location while using it. 
                         We'll show you all of the 
                         closest Scoots and some 
-                        extra useful information`}/>
+                        extra useful information`}
+                    {...itemProps}/>
                 <Accordian
                     title='Do I need a license to ride?'
                     content={`Yup! We provide information 
@@ -43,11 +55,12 @@ function FAQ() {
                         wearing a helmet regardless of the 
                         local laws. We like you and we want 
                         you to be as safe as possible while 
-                        Scooting.`}/>
+                        Scooting.`}
+                    {...itemProps}/>
             </div>
-            <h2 className={styles.faq_desc}>
+            <motion.h2 className={styles.faq_desc} {...itemProps}>
                 Safe Driving
-            </h2>
+            </motion.h2>
             <div className={styles.faq_accordians}>
                 <Accordian
                     title='Should I wear a helmet?'
@@ -57,14 +70,16 @@ function FAQ() {
                         wearing a helmet regardless of the 
                         local laws. We like you and we want 
                         you to be as safe as possible while 
-                        Scooting.`}/>
+                        Scooting.`}
+                    {...itemProps}/>
                 <Accordian
                     title='How about the rules & regulations?'
                     content={`Now is not the time to be a rule breaker. 
                         Be sure you're complying with all local laws and regulations. 
                         Also, just be a good human being. Be sure not to 
                         park your Scoot where it can block access to buildings 
-                        or get in people's way.`}/>
+                        or get in people's way.`}
+                    {...itemProps}/>
                 <Accordian
                     title='What if I damage my Scoot?'
                     content={`Be sure to read our terms 
@@ -75,7 +90,8 @@ function FAQ() {
                         for each trip, or you can sign up 
                         for annual insurance if you're a 
                         regular Scooter. Sign up and Scoot 
-                        off today About Location Careers`}/>
+                        off today About Location Careers`}
+                    {...itemProps}/>
             </div>
             
         </section>

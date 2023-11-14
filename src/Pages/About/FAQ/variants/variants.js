@@ -1,14 +1,13 @@
-export const linkVariants = {
+export const itemVariants = {
     hidden: {
         opacity: 0,
-        y: -50,
+        x: -100,
     },
     show: {
         opacity: 1,
-        y: 0,
+        x: 0,
         transition: {
-            duration: 0.4,
+            duration: 0.4
         }
     }
 }
-
