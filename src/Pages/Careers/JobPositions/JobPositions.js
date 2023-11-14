@@ -15,7 +15,7 @@ function JobPositions() {
                             key={job.position}
                             initial='hidden'
                             whileInView='show'
-                            viewport={{once: true, amount: 0.8}}
+                            viewport={{once: true}}
                             transition={{delay: 0.4}}
                             variants={boxVariants}
                             >
