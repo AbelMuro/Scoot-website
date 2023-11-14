@@ -40,7 +40,7 @@ export const photoVariants = {
         opacity: 1,
         rotate: '0deg',
         transition: {
-            duration: 0.4
+            duration: 0.7
         }
     }
 } 
