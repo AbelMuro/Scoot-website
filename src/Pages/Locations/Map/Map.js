@@ -38,8 +38,7 @@ function Map() {
             <motion.h1 
                 className={styles.map_title} 
                 {...props} 
-                variants={textButtonVariants} 
-                transition={{staggerChildren: 0.6}}>
+                variants={textButtonVariants}>
                     Your City Not Listed?
             </motion.h1>
             <motion.p
