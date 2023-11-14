@@ -5,7 +5,9 @@ export const mapVariants = {
     show: {
         scale: 1,
         transition: {
-            duration: 0.8
+            type: 'spring',
+            stiffness: 150,
+            damping: 8,
         }
     }
 }
@@ -24,7 +26,7 @@ export const citiesVariants = {
 
 export const textButtonVariants = {
     hidden: {
-        scale: 0,
+        scale: 0.1,
     },
     show: {
         scale: 1,
