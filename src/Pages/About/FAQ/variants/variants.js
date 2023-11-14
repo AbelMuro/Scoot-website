@@ -1,7 +1,7 @@
 export const itemVariants = {
     hidden: {
         opacity: 0,
-        x: -100,
+        x: -50,
     },
     show: {
         opacity: 1,
